@@ -3,7 +3,7 @@ package com.example.store.feature.auth.presentation.sign_up
 import androidx.lifecycle.viewModelScope
 import com.example.store.core.domain.Result
 import com.example.store.core.presentation.BaseViewModel
-import com.example.store.feature.auth.domain.use_case.SignUnUseCase
+import com.example.store.feature.auth.domain.use_case.SignUpUseCase
 import com.example.store.feature.auth.domain.use_case.validation.ValidateEmailUseCase
 import com.example.store.feature.auth.domain.use_case.validation.ValidatePasswordUseCase
 import com.example.store.feature.auth.domain.use_case.validation.ValidateUsernameUseCase
@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SignUpViewModel @Inject constructor(
-    private val signUpUseCase: SignUnUseCase,
+    private val signUpUseCase: SignUpUseCase,
     private val validateUsernameUseCase: ValidateUsernameUseCase,
     private val validateEmailUseCase: ValidateEmailUseCase,
     private val validatePasswordUseCase: ValidatePasswordUseCase
