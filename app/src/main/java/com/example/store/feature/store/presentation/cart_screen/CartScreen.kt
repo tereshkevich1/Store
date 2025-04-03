@@ -87,7 +87,7 @@ fun CartScreen(
             )
             { pack ->
                 CartItem(
-                    totalPrice = pack.packWithDetailsUi.name,
+                    totalPrice = pack.totalPrice.formatted,
                     cartPack = pack
                 )
             }

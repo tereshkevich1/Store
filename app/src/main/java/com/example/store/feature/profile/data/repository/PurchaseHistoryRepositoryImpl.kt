@@ -1,8 +1,9 @@
 package com.example.store.feature.profile.data.repository
 
-import com.example.store.core.data.remote.FirebaseDataSource
-import com.example.store.core.data.remote.errors.FirestoreError
-import com.example.store.core.data.remote.model.Purchase
+import com.example.store.feature.common.data.remote.FirebaseDataSource
+import com.example.store.feature.common.data.remote.errors.FirestoreError
+import com.example.store.feature.common.data.remote.model.Purchase
+import com.example.store.feature.common.data.remote.model.PurchaseSummary
 import com.example.store.core.domain.Result
 import com.example.store.feature.profile.domain.repository.PurchaseHistoryRepository
 import com.google.firebase.auth.FirebaseAuth
@@ -15,13 +16,23 @@ class PurchaseHistoryRepositoryImpl @Inject constructor(
 
     private val userId = firebaseAuth.uid ?: ""
 
-    override suspend fun getUserPurchases(): Result<List<Purchase>, FirestoreError> =
+    override suspend fun getPurchaseSummaries(): Result<List<PurchaseSummary>, FirestoreError> =
         try {
-            val purchases = firebaseDataSource.getUserPurchases(userId)
+            val purchases = firebaseDataSource.getPurchaseSummaries(userId)
             Result.Success(purchases)
         } catch (e: Exception) {
             Result.Error(FirestoreError.UNKNOWN_ERROR)
         }
+
+    override suspend fun getPurchase(purchaseId: String): Result<Purchase, FirestoreError> =
+        try {
+            val purchase = firebaseDataSource.getPurchase(userId, purchaseId)
+                ?: throw Exception("purchase is null")
+            Result.Success(purchase)
+        } catch (e: Exception) {
+            Result.Error(FirestoreError.UNKNOWN_ERROR)
+        }
+
 
     override suspend fun getUserName(): Result<String, FirestoreError> =
         try {

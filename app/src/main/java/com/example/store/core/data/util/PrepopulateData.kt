@@ -1,9 +1,9 @@
 package com.example.store.core.data.util
 
-import com.example.store.core.data.local.entity.BarcodeEntity
-import com.example.store.core.data.local.entity.PackEntity
-import com.example.store.core.data.local.entity.PackPriceEntity
-import com.example.store.core.data.local.entity.UnitEntity
+import com.example.store.feature.common.data.local.entity.BarcodeEntity
+import com.example.store.feature.common.data.local.entity.PackEntity
+import com.example.store.feature.common.data.local.entity.PackPriceEntity
+import com.example.store.feature.common.data.local.entity.UnitEntity
 
 
 object PrepopulateData {

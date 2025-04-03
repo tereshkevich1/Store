@@ -1,12 +1,15 @@
 package com.example.store.feature.store.data.repository
 
-import com.example.store.core.data.remote.FirebaseDataSource
-import com.example.store.core.data.remote.errors.FirestoreError
-import com.example.store.core.data.remote.model.Purchase
 import com.example.store.core.domain.Result
+import com.example.store.feature.common.data.remote.FirebaseDataSource
+import com.example.store.feature.common.data.remote.errors.FirestoreError
+import com.example.store.feature.common.data.remote.model.Purchase
 import com.example.store.feature.store.domain.repository.CartRepository
 import com.example.store.feature.store.presentation.models.CartPack
+import com.example.store.feature.store.presentation.models.DisplayableNumber
+import com.example.store.feature.store.presentation.models.PackType
 import com.example.store.feature.store.presentation.models.PackWithDetailsUi
+import com.example.store.feature.store.presentation.models.toFormattedPrice
 import com.example.store.feature.store.presentation.models.toFormattedQuantity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.flow.Flow
@@ -62,14 +65,27 @@ private fun List<CartPack>.updateOrAddItem(
                 existingItem.copy(
                     quantity = (existingItem.quantity.value + quantity).toFormattedQuantity(
                         existingItem.packWithDetailsUi.type
-                    )
+                    ),
+                    totalPrice = calculateTotalPrice(existingItem.packWithDetailsUi, quantity)
                 )
             )
         }
     } else {
         this + CartPack(
             packWithDetailsUi = item,
-            quantity = quantity.toFormattedQuantity(item.type)
+            quantity = quantity.toFormattedQuantity(item.type),
+            totalPrice = calculateTotalPrice(item, quantity)
         )
     }
+}
+
+private fun calculateTotalPrice(pack: PackWithDetailsUi, quantity: Int): DisplayableNumber {
+    val adjustedQuantity = if (pack.type == PackType.WEIGHT) {
+        quantity / 1000.0
+    } else {
+        quantity.toDouble()
+    }
+
+    val totalPriceValue = (pack.discountedPrice.value * adjustedQuantity).toInt()
+    return totalPriceValue.toFormattedPrice()
 }

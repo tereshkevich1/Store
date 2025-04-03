@@ -2,7 +2,7 @@ package com.example.store.feature.store.presentation.models
 
 import android.content.Context
 import com.example.store.R
-import com.example.store.core.domain.model.PackWithDetails
+import com.example.store.feature.common.domain.model.PackWithDetails
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -36,6 +36,11 @@ data class DisplayableNumber(
     val value: Int,
     val formatted: String
 )
+
+enum class PackType {
+    UNIT,
+    WEIGHT
+}
 
 fun Int.toFormattedPrice(): DisplayableNumber {
     val rubles = this / 100.0
@@ -74,9 +79,4 @@ fun PackType.toPriceDescription(context: Context): String {
         PackType.UNIT -> context.getString(R.string.pcs)
         PackType.WEIGHT -> context.getString(R.string.kg)
     }
-}
-
-enum class PackType {
-    UNIT,
-    WEIGHT
 }

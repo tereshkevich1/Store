@@ -1,7 +1,7 @@
 package com.example.store.feature.store.domain.repository
 
-import com.example.store.core.data.remote.errors.FirestoreError
-import com.example.store.core.data.remote.model.Purchase
+import com.example.store.feature.common.data.remote.errors.FirestoreError
+import com.example.store.feature.common.data.remote.model.Purchase
 import com.example.store.core.domain.Result
 import com.example.store.feature.store.presentation.models.CartPack
 import com.example.store.feature.store.presentation.models.PackWithDetailsUi

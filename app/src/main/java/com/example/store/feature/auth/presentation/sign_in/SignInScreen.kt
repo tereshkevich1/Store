@@ -34,7 +34,6 @@ import androidx.lifecycle.lifecycleScope
 import com.example.store.R
 import com.example.store.feature.auth.presentation.components.AuthTextField
 import com.example.store.feature.auth.presentation.sign_in.SignInScreenEvent.ShowToast
-import com.example.store.feature.auth.presentation.sign_up.SignUpScreenAction
 import com.example.store.ui.theme.DpSpSize.paddingMedium
 import com.example.store.ui.theme.DpSpSize.paddingSmall
 import kotlinx.coroutines.launch

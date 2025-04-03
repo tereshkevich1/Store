@@ -1,9 +1,6 @@
 package com.example.store.feature.auth.presentation.sign_up
 
-import com.example.store.core.presentation.util.UiText
-import com.example.store.feature.auth.domain.errors.EmailError
-import com.example.store.feature.auth.domain.errors.PasswordError
-import com.example.store.feature.auth.domain.errors.UsernameError
+import com.example.store.core.presentation.UiText
 
 data class SignUpState(
     val usernameText: String = "",

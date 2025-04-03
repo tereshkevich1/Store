@@ -1,7 +1,7 @@
 package com.example.store.feature.store.presentation.packs_list_screen.bottom_sheet
 
 import com.example.store.R
-import com.example.store.core.presentation.util.UiText
+import com.example.store.core.presentation.UiText
 import com.example.store.feature.store.domain.use_case.validations.errors.ProductQuantityError
 
 fun ProductQuantityError.asUiText(): UiText {

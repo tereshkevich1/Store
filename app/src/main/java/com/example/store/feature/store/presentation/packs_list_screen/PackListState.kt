@@ -1,6 +1,6 @@
 package com.example.store.feature.store.presentation.packs_list_screen
 
-import com.example.store.core.presentation.util.UiText
+import com.example.store.core.presentation.UiText
 import com.example.store.feature.store.presentation.models.PackWithDetailsUi
 
 data class PackListState(

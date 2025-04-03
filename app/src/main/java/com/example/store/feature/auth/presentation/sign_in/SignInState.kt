@@ -1,6 +1,6 @@
 package com.example.store.feature.auth.presentation.sign_in
 
-import com.example.store.core.presentation.util.UiText
+import com.example.store.core.presentation.UiText
 
 data class SignInState(
     val emailText: String = "",

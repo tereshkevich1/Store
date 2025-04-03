@@ -41,19 +41,24 @@ fun PackItem(
             verticalArrangement = Arrangement.Center
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
+                val discountedPrice = packWithDetailsUi.discountedPrice
+                val originalPrice = packWithDetailsUi.originalPrice
+
                 Text(
-                    text = packWithDetailsUi.discountedPrice.formatted,
+                    text = discountedPrice.formatted,
                     style = MaterialTheme.typography.titleMedium
                 )
 
-                Spacer(modifier = Modifier.width(paddingSmall))
+                if (discountedPrice.value != originalPrice.value) {
+                    Spacer(modifier = Modifier.width(paddingSmall))
 
-                Text(
-                    text = packWithDetailsUi.originalPrice.formatted,
-                    textDecoration = TextDecoration.LineThrough,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.outlineVariant
-                )
+                    Text(
+                        text = originalPrice.formatted,
+                        textDecoration = TextDecoration.LineThrough,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.outlineVariant
+                    )
+                }
 
                 Spacer(modifier = Modifier.width(paddingSmall))
 

@@ -1,8 +1,8 @@
 package com.example.store.feature.store.data.repository
 
-import com.example.store.core.data.local.data_source.PackDao
-import com.example.store.core.data.local.mappers.toPackWithDetails
-import com.example.store.core.domain.model.PackWithDetails
+import com.example.store.feature.common.data.local.data_source.PackDao
+import com.example.store.feature.common.data.local.mappers.toPackWithDetails
+import com.example.store.feature.common.domain.model.PackWithDetails
 import com.example.store.feature.store.domain.repository.PackRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

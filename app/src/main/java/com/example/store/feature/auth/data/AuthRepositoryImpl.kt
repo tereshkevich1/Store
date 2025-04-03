@@ -2,7 +2,7 @@ package com.example.store.feature.auth.data
 
 import android.util.Log
 import com.example.store.core.domain.Result
-import com.example.store.core.data.remote.FirebaseDataSource
+import com.example.store.feature.common.data.remote.FirebaseDataSource
 import com.example.store.feature.auth.domain.errors.FirebaseAuthError
 import com.example.store.feature.auth.domain.repository.AuthRepository
 import com.google.firebase.auth.FirebaseAuth

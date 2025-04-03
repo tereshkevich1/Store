@@ -1,8 +1,8 @@
 package com.example.store.feature.store.domain.use_case.cart
 
-import com.example.store.core.data.remote.errors.FirestoreError
-import com.example.store.core.data.remote.mappers.toPackFirestore
-import com.example.store.core.data.remote.model.Purchase
+import com.example.store.feature.common.data.remote.errors.FirestoreError
+import com.example.store.feature.common.data.remote.mappers.toPackFirestore
+import com.example.store.feature.common.data.remote.model.Purchase
 import com.example.store.core.domain.Result
 import com.example.store.feature.store.domain.repository.CartRepository
 import com.example.store.feature.store.presentation.models.CartPack
