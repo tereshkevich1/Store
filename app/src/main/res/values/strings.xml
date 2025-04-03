@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Store</string>
+    <string name="store">Store</string>
+    <string name="profile">Profile</string>
+    <string name="cart">Cart</string>
+    <string name="goods">goods</string>
+    <string name="payment">payment</string>
+    <string name="pcs">шт</string>
+    <string name="kg">кг</string>
+    <string name="weight_gram">Вес(г)</string>
+    <string name="quantity_pcs">Количество(шт)</string>
+    <string name="unknown_type">неизвестный тип</string>
+    <string name="cancel">Наташа, отмена</string>
+    <string name="to_cart">В корзину</string>
+    <string name="for_payment">К оплате: %s</string>
+    <string name="zero">0</string>
+    <string name="error_invalid_format">Неверный формат ввода</string>
+    <string name="error_invalid_number">Невозможно преобразовать в число</string>
+    <string name="error_too_low">Слишком маленькое значение</string>
+    <string name="error_exceeds_max">Значение превышает максимально допустимое</string>
+    <string name="register">Регистрация</string>
+    <string name="sign_in">Вход</string>
+    <string name="email">Email</string>
+    <string name="password_hint">Пароль</string>
+    <string name="field_empty">Поле пустое</string>
+    <string name="input_too_short">Имя слишком короткое</string>
+    <string name="invalid_email">Некорретный email</string>
+    <string name="invalid_passwod">Пароль должен содержать цифры и символы</string>
+    <string name="passwod_to_short">Слишком короткий пароль</string>
+
+    <string name="wrong_password">Неверный пароль</string>
+    <string name="user_not_found">Пользователь не найден</string>
+    <string name="email_already_in_use">Этот email уже используется</string>
+    <string name="weak_password">Пароль слишком слабый</string>
+    <string name="network_error">Ошибка сети. Проверьте подключение</string>
+    <string name="unknown_error">Неизвестная ошибка. Попробуйте позже</string>
+    <string name="username">ФИО</string>
+    <string name="already_have_an_account">Уже есть аккаунт?</string>
+    <string name="dont_have_an_account_yet">Еще не зарегался? =]</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="to_order">К оформлению</string>
+    <string name="log_out">Выйти\n</string>
+</resources>
